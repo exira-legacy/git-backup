@@ -19,7 +19,7 @@ Exira.GitBackup is a console application which backs up Git repositories on a ro
   * NumberOfWeeklyBackups: `# weekly backups to keep`, e.g.: `4`
   * NumberOfMonthlyBackups: `# monthly backups to keep`, e.g.: `6`
   * NumberOfYearlyBackups: `# yearly backups to keep`, e.g.: `2`
-  * BackupRoot: `Path where backups will be stored, must have a trailing slash`, e.g.: `C:\git-backup\`
+  * BackupRoot: `Path where backups will be stored`, e.g.: `C:\git-backup\`
   * Repositories: `A list of all repositories to back up`
     * Name: `Unique name of repository, used as backup key`, e.g.: `git-backup`
     * Url: `Git location of repository, supports https and ssh`, e.g.: `ssh://git@github.com:exira/git-backup.git`

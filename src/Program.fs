@@ -125,6 +125,11 @@ let bundleRepository (repository: BackupConfig.Backup_Type.Repositories_Item_Typ
         |> toMap
         |> Map.iter (fun _ value -> bundle.Include value)
 
+        bundleLocation
+        |> Path.GetDirectoryName
+        |> Directory.CreateDirectory
+        |> ignore
+
         use bundleOutput = new FileOutputStream(bundleLocation)
         bundle.WriteBundle(NullProgressMonitor.INSTANCE, bundleOutput)
         bundleOutput.Close()
@@ -142,7 +147,7 @@ let bundleRepository (repository: BackupConfig.Backup_Type.Repositories_Item_Typ
     let repoName = repository.Name
     let repoLocation = repository.Url |> formatLocation
     let repoKey = repository.PrivateKey
-    let bundleLocation = sprintf "%s%s-%s.git" backupConfig.Backup.BackupRoot (DateTime.Today.ToString("yyyy.MM.dd")) repoName
+    let bundleLocation = Path.Combine [| backupConfig.Backup.BackupRoot; repository.Name; sprintf "%s-%s.git" (DateTime.Today.ToString("yyyy.MM.dd")) repoName |]
 
     try
         init repoName
@@ -157,7 +162,8 @@ let bundleRepository (repository: BackupConfig.Backup_Type.Repositories_Item_Typ
 let getBundles (repository: BackupConfig.Backup_Type.Repositories_Item_Type) =
     try
         let backupFilter = sprintf "*-%s.git" repository.Name
-        Directory.GetFiles(backupConfig.Backup.BackupRoot, backupFilter) |> succeed
+        let bundleLocation = Path.Combine [| backupConfig.Backup.BackupRoot; repository.Name |]
+        Directory.GetFiles(bundleLocation, backupFilter) |> succeed
     with
     | ex -> fail [FailedToRetrieveBundles (repository.Name, ex)]
 
@@ -172,7 +178,7 @@ let pruneBackups (backups: seq<string>) =
     let prunedBackups =
         backups
         |> Seq.filter (fun s ->
-            let date = s.Replace(backupConfig.Backup.BackupRoot, "").Split('-') |> Array.head
+            let date = (Path.GetFileNameWithoutExtension s).Split('-') |> Array.head
             daysToKeep |> List.contains (DateTime.ParseExact(date, "yyyy.MM.dd", CultureInfo.InvariantCulture)) |> not)
         |> Seq.map deleteBundle
         |> Seq.toList
