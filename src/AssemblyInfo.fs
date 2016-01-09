@@ -4,10 +4,10 @@ open System.Reflection
 [<assembly: AssemblyTitleAttribute("git-backup")>]
 [<assembly: AssemblyProductAttribute("Exira.GitBackup")>]
 [<assembly: AssemblyDescriptionAttribute("Exira.GitBackup is a console application which backs up Git repositories on a rotating schedule")>]
-[<assembly: AssemblyVersionAttribute("1.2.3")>]
-[<assembly: AssemblyFileVersionAttribute("1.2.3")>]
-[<assembly: AssemblyMetadataAttribute("githash","26c2d4222ee2d798017710c7482ab6ca984145af")>]
+[<assembly: AssemblyVersionAttribute("0.1.0")>]
+[<assembly: AssemblyFileVersionAttribute("0.1.0")>]
+[<assembly: AssemblyMetadataAttribute("githash","ce6190a9ad4820d46d72f70fe8bd1a5a18b1aab6")>]
 do ()
 
 module internal AssemblyVersionInformation =
-    let [<Literal>] Version = "1.2.3"
+    let [<Literal>] Version = "0.1.0"
