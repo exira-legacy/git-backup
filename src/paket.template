@@ -1,0 +1,28 @@
+type project
+id
+    Exira.GitBackup
+owners
+    exira
+authors
+    exira
+projectUrl
+    http://git.exira.com/git-backup/
+iconUrl
+    https://raw.githubusercontent.com/exira/git-backup/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/exira/git-backup/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    git f#
+summary
+    Exira.GitBackup is a console application which backs up Git repositories on a rotating schedule
+description
+    Exira.GitBackup is a console application which backs up Git repositories on a rotating schedule
+files
+    bin/Release/*.exe ==> tools
+    bin/Release/*.dll ==> tools
+    bin/Release/*.config ==> tools
+    bin/Release/Backup.yaml ==> tools

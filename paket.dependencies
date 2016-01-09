@@ -1,0 +1,16 @@
+redirects: on
+source https://nuget.org/api/v2
+
+nuget FSharp.Core
+nuget FSharp.Formatting
+nuget FAKE
+nuget SourceLink.Fake
+
+nuget FSharp.Configuration
+nuget Exira.ErrorHandling
+
+github mono/ngit:292a4e4ff81d1c4f59b04cd2b9bc1a1f588fa4eb
+nuget Mono.Security
+nuget SharpZipLib
+
+github fsharp/FAKE modules/Octokit/Octokit.fsx

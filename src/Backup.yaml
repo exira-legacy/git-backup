@@ -1,0 +1,46 @@
+﻿Backup:
+    Debug: true
+
+    NumberOfDailyBackups: 7
+    NumberOfWeeklyBackups: 4
+    NumberOfMonthlyBackups: 6
+    NumberOfYearlyBackups: 2
+
+    BackupRoot: C:\Temp\git-backup\
+
+    Repositories:
+    - Name: aws-s3-cache
+      Url: ssh://git@github.com/exira/aws-s3-cache.git
+      PrivateKey: C:\Temp\git-backup\teamcity.exira.com-aws-s3-cache.priv
+    - Name: aws-s3-cache-cleanup
+      Url: https://github.com/exira/aws-s3-cache-cleanup.git
+    - Name: aws-s3-cache-crawler
+      Url: https://github.com/exira/aws-s3-cache-crawler.git
+    - Name: csproj-rewriter
+      Url: https://github.com/exira/csproj-rewriter.git
+    - Name: csrf-owin
+      Url: https://github.com/exira/csrf-owin.git
+    - Name: ebs-backup
+      Url: https://github.com/exira/ebs-backup.git
+    - Name: error-handling
+      Url: https://github.com/exira/error-handling.git
+    - Name: exira.github.io
+      Url: https://github.com/exira/exira.github.io.git
+    - Name: ges-logger
+      Url: https://github.com/exira/ges-logger.git
+    - Name: ges-owin
+      Url: https://github.com/exira/ges-owin.git
+    - Name: ges-runner
+      Url: https://github.com/exira/ges-runner.git
+    - Name: jil-mediatypeformatter
+      Url: https://github.com/exira/jil-mediatypeformatter.git
+    - Name: projectnami-blob-cache
+      Url: https://github.com/exira/projectnami-blob-cache.git
+    - Name: route-53-updater
+      Url: https://github.com/exira/route-53-updater.git
+    - Name: simple-http-server
+      Url: https://github.com/exira/simple-http-server.git
+    - Name: static-mailer
+      Url: https://github.com/exira/static-mailer.git
+    - Name: versionheader-owin
+      Url: https://github.com/exira/versionheader-owin.git
