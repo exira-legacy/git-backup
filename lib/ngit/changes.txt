@@ -1,0 +1,6 @@
+BundleWriter
+
+public virtual void Include(string name, AnyObjectId id)
+{
+    var validRefName = Repository.IsValidRefName(name) || Constants.HEAD.Equals(name);
+    if (!validRefName)

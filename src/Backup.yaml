@@ -6,12 +6,14 @@
     NumberOfMonthlyBackups: 6
     NumberOfYearlyBackups: 2
 
-    BackupRoot: C:\Temp\git-backup\
+    BackupRoot: C:\git-backup\
 
     Repositories:
+    - Name: git-backup
+      Url: ssh://git@github.com/exira/git-backup.git
+      PrivateKey: C:\git-backup\keys\git-backup.priv
     - Name: aws-s3-cache
-      Url: ssh://git@github.com/exira/aws-s3-cache.git
-      PrivateKey: C:\Temp\git-backup\teamcity.exira.com-aws-s3-cache.priv
+      Url: https://github.com/exira/aws-s3-cache.git
     - Name: aws-s3-cache-cleanup
       Url: https://github.com/exira/aws-s3-cache-cleanup.git
     - Name: aws-s3-cache-crawler
