@@ -31,14 +31,14 @@ Exira.GitBackup is a console application which backs up Git repositories on a ro
 
 ### Information
 
-You can then check what is in your bundle:
-$ `git bundle list-heads C:\git-backup\2016.01.09-git-backup.git`
+###### You can then check what is in your bundle:
+`git bundle list-heads C:\git-backup\2016.01.09-git-backup.git`
 
-To send it by email or any dumb transport, and in the repository on the other side:
-$ `git bundle verify C:\git-backup\2016.01.09-git-backup.git`
+##### To send it by email or any dumb transport, and in the repository on the other side:
+`git bundle verify C:\git-backup\2016.01.09-git-backup.git`
 
-After moving the bundle on any location you can get a new repository by:
-$ `git clone -b master C:\git-backup\2016.01.09-git-backup.git newrepo`
+##### After moving the bundle on any location you can get a new repository by:
+`git clone -b master C:\git-backup\2016.01.09-git-backup.git newrepo`
 
 ### Cloning
 
