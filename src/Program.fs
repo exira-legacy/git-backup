@@ -52,7 +52,7 @@ let printBundles message (bundles: seq<string>) =
     if backupConfig.Backup.Debug then
         bundles
         |> Seq.sortBy (fun s ->
-            let date = s.Split('-') |> Array.head
+            let date = (Path.GetFileNameWithoutExtension s).Split('-') |> Array.head
             DateTime.ParseExact(date, "yyyy.MM.dd", CultureInfo.InvariantCulture))
         |> Seq.iter (printBundle message)
     else ()
