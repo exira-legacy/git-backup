@@ -1,3 +1,6 @@
+#### 0.4 - January 11 2016
+* Add SeriLog
+
 #### 0.3 - January 10 2016
 * Debug print now works
 

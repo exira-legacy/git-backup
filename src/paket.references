@@ -1,3 +1,4 @@
 ﻿FSharp.Core
 FSharp.Configuration
 Exira.ErrorHandling
+Serilog.Sinks.Seq

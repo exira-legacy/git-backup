@@ -1,23 +1,25 @@
-﻿module PrivateKeyConfigSessionFactory
+﻿namespace Exira.GitBackup
 
-open System
-open System.IO
-open NGit.Transport
-open NGit.Util
-open NSch
-open Sharpen
+module internal PrivateKeyConfigSessionFactory =
 
-type PrivateKeyConfigSessionFactory(privateKeyPath) =
-    inherit JschConfigSessionFactory()
+    open System
+    open System.IO
+    open NGit.Transport
+    open NGit.Util
+    open NSch
+    open Sharpen
 
-    do
-        Environment.SetEnvironmentVariable("GIT_SSH", "", EnvironmentVariableTarget.Process)
+    type PrivateKeyConfigSessionFactory(privateKeyPath) =
+        inherit JschConfigSessionFactory()
 
-    override __.Configure(hc: OpenSshConfig.Host, session: Session) =
-        let config = Properties()
-        config.["StrictHostKeyChecking"] <- "no"
-        config.["PreferredAuthentications"] <- "publickey"
-        session.SetConfig config
+        do
+            Environment.SetEnvironmentVariable("GIT_SSH", "", EnvironmentVariableTarget.Process)
 
-        let jsch = base.GetJSch(hc, FS.DETECTED)
-        jsch.AddIdentity("KeyPair", File.ReadAllBytes privateKeyPath, null, null)
+        override __.Configure(hc: OpenSshConfig.Host, session: Session) =
+            let config = Properties()
+            config.["StrictHostKeyChecking"] <- "no"
+            config.["PreferredAuthentications"] <- "publickey"
+            session.SetConfig config
+
+            let jsch = base.GetJSch(hc, FS.DETECTED)
+            jsch.AddIdentity("KeyPair", File.ReadAllBytes privateKeyPath, null, null)

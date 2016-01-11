@@ -8,6 +8,7 @@ nuget SourceLink.Fake
 
 nuget FSharp.Configuration
 nuget Exira.ErrorHandling
+nuget Serilog.Sinks.Seq
 
 github mono/ngit:292a4e4ff81d1c4f59b04cd2b9bc1a1f588fa4eb
 nuget Mono.Security

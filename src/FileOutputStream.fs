@@ -1,12 +1,14 @@
-﻿module FileOutputStream
+﻿namespace Exira.GitBackup
 
-// Minimally ported from https://github.com/mono/ngit/blob/master/Sharpen/Sharpen/FileOutputStream.cs
+module internal FileOutputStream =
 
-open System.IO
-open Sharpen
+    // Minimally ported from https://github.com/mono/ngit/blob/master/Sharpen/Sharpen/FileOutputStream.cs
 
-type FileOutputStream(file) as self =
-    inherit OutputStream()
+    open System.IO
+    open Sharpen
 
-    do
-        self.Wrapped <- File.Open(file, FileMode.Create, FileAccess.Write) :> Stream
+    type FileOutputStream(file) as self =
+        inherit OutputStream()
+
+        do
+            self.Wrapped <- File.Open(file, FileMode.Create, FileAccess.Write) :> Stream
