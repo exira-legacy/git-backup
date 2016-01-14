@@ -226,6 +226,10 @@ module Program =
 
     [<EntryPoint>]
     let main _ =
+        AppDomain.CurrentDomain.UnhandledException.Add(fun exc ->
+            let ex = exc.ExceptionObject :?> Exception
+            logger.Fatal("Unhandled exception: {exception}", ex.ToString()))
+
         let backups =
             backupConfig.Backup.Repositories
             |> backup

@@ -1,3 +1,6 @@
+#### 0.5 - January 14 2016
+* Catch unhandled exceptions
+
 #### 0.4 - January 11 2016
 * Add Serilog
 
